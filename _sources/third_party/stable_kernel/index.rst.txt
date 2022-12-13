@@ -1,0 +1,20 @@
+=========================================
+Deprecated Version ("kunit/alpha/master")
+=========================================
+
+Here we have a copy of the documentation taken from the old "alpha" version
+KUnit.
+
+You should really prefer using the upstream version if possible, but the alpha
+version has some features that still haven't made their way upstream (class
+mocking, feature mocking, death tests, etc.)
+
+Where to get the code
+---------------------
+
+https://kunit.googlesource.com/linux/+/kunit/alpha/master
+
+Getting Started Guide
+---------------------
+
+`docs/ <docs/>`_

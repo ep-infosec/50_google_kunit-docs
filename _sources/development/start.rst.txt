@@ -1,0 +1,33 @@
+================================
+Getting Started Developing KUnit
+================================
+
+Setting Up Your Work Environment
+================================
+
+Follow the instructions at :doc:`../usage/index`.
+
+Familiarize Yourself with KUnit's Design
+========================================
+
+KUnit's design is discussed in the :doc:`design` section.
+
+Contributing to code in the Linux kernel
+========================================
+
+Please follow the guide in the Linux kernel:
+https://www.kernel.org/doc/html/latest/#introduction-to-kernel-development
+
+In addition, remember to CC kunit-dev@googlegroups.com and
+linux-kselftest@vger.kernel.org.
+
+Contributing to code outside of the Linux kernel
+================================================
+
+This section is for contributing code to repos that live outside of
+https://git.kernel.org.
+
+This only applies to the deprecated ``kunit/alpha/master`` branch and the other
+repos (like the one that hosts this site!).
+
+See :doc:`start_internal` for more details.

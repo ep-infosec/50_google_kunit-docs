@@ -1,0 +1,38 @@
+=====
+Press
+=====
+
+Talks about KUnit
+=================
+
+ - `Introduction to KUnit - Linux Plumbers Conference 2019
+   <https://linuxplumbersconf.org/event/4/contributions/545/>`_
+ - `KUnit - Unit Testing for the Linux Kernel - linux.conf.au 2020
+   <https://lca2020.linux.org.au/schedule/presentation/97/>`_
+ - `KUnit - One Year Later - Linux Plumbers Conference 2020
+   <https://linuxplumbersconf.org/event/7/contributions/747/>`_
+ - `KUnit: Past, Present, and Future - linux.conf.au 2021
+   <https://linux.conf.au/schedule/presentation/98/>`_
+ - `KUnit Testing Stragegies — Linux Foundation Mentorship Series
+   <https://linuxfoundation.org/webinars/kunit-testing-strategies/>`_
+ - `Kernel Testing with KUnit: Bridging the Gap — linux.conf.au 2022
+   <https://www.youtube.com/watch?v=Ffu08AL5WVI>`_
+ - `How to introduce KUnit to Physical Device Drivers - Linux Plumbers Conference 2022
+   <https://www.youtube.com/watch?v=vfJnPbAt6gI>`_
+ - `KUnit Function Redirection and More - Linux Plumbers Conference 2022
+   <https://www.youtube.com/watch?v=0Nm06EdXWsE>`_
+ - `KUnit sorcery and the uncanny nature of FPU in the DRM - X.Org Developer’s Conference 2022
+   <https://www.youtube.com/watch?v=nbRbM-Ld-44>`_
+ - `Uncovering DRM’s KUnit test coverage - X.Org Developer’s Conference 2022
+   <https://www.youtube.com/watch?v=HvKf4bBz74o>`_
+
+Articles about KUnit
+====================
+
+ - https://lwn.net/Articles/780985/
+ - https://www.linuxjournal.com/content/unit-testing-linux-kernel
+ - https://lwn.net/Articles/790235/
+ - https://www.linuxjournal.com/content/kunit-and-assertions
+ - https://www.phoronix.com/scan.php?page=news_item&px=KUnit-Linux-Kernel-V1
+ - https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kernel-KUnit-Framework
+ - https://hub.packtpub.com/kunit-a-new-unit-testing-framework-for-linux-kernel

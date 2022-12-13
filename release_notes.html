@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release Notes &mdash; KUnit  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fakes and Stubbing and Mocks, Oh My!" href="mocking.html" />
+    <link rel="prev" title="Deprecated Version (“kunit/alpha/master”)" href="third_party/stable_kernel/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> KUnit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Using KUnit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third_party/kernel/index.html">Upstream Version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third_party/stable_kernel/index.html">Deprecated Version (“kunit/alpha/master”)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v5-5">5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-6">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-7">5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-8">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-9">5.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-10">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-11">5.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-12">5.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-13">5.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-14">5.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-15">5.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-16">5.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-17">5.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-18">5.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v5-19">5.19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tentative">6.0 (tentative)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mocking.html">Fakes and Stubbing and Mocks, Oh My!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="press.html">Press</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">KUnit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Release Notes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/release_notes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline"></a></h1>
+<p>This page briefly summarizes the KUnit changes in each Linux release.</p>
+<p>For more specific documentation on KUnit features, see the in-kernel
+documentation: <a class="reference external" href="https://kernel.org/doc/html/latest/dev-tools/kunit">https://kernel.org/doc/html/latest/dev-tools/kunit</a>.</p>
+<section id="v5-5">
+<span id="id1"></span><h2>5.5<a class="headerlink" href="#v5-5" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>KUnit introduced, including all the basic functionality.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kunitconfig</span></code> was renamed to <code class="docutils literal notranslate"><span class="pre">.kunitconfig</span></code> later in in 5.5 (<a class="reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=14ee5cfd4512ee3d1e0047d8751450dcc6544070">commit</a>)</p></li>
+</ul>
+</section>
+<section id="v5-6">
+<span id="id2"></span><h2>5.6<a class="headerlink" href="#v5-6" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>KUnit tests can be built as modules, <a class="reference external" href="https://www.kernel.org/doc/html/latest/dev-tools/kunit/running_tips.html#running-tests-as-modules">docs</a></p></li>
+</ul>
+</section>
+<section id="v5-7">
+<span id="id3"></span><h2>5.7<a class="headerlink" href="#v5-7" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>kunit.py switched to using <code class="docutils literal notranslate"><span class="pre">.kunit/</span></code> as the default build dir (and
+<code class="docutils literal notranslate"><span class="pre">.kunitconfig</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">.kunit/.kunitconfig</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_KUNIT_DEBUGFS</span></code> to expose per-suite test results in
+<code class="docutils literal notranslate"><span class="pre">/sys/kernel/debug/kunit/&lt;suite&gt;/results</span></code>, <a class="reference external" href="https://www.kernel.org/doc/html/latest/dev-tools/kunit/running_tips.html#retrieving-per-suite-results">docs</a></p></li>
+</ul>
+</section>
+<section id="v5-8">
+<span id="id4"></span><h2>5.8<a class="headerlink" href="#v5-8" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> now supports separate <code class="docutils literal notranslate"><span class="pre">config/build/exec/parse</span></code> commands in
+addition to <code class="docutils literal notranslate"><span class="pre">run</span></code>.</p>
+<ul>
+<li><p>You can use these if you don’t want to let <code class="docutils literal notranslate"><span class="pre">kunit.py</span> <span class="pre">run</span></code> do everything
+for you, e.g. if you want to run manually but parse the results using
+<code class="docutils literal notranslate"><span class="pre">kunit.py</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_KUNIT_ALL_TESTS</span></code> introduced</p>
+<ul>
+<li><p>This is just a convention. New tests should use it like so:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>config FOO_KUNIT_TEST
+        tristate &quot;KUnit test for foo&quot; if !KUNIT_ALL_TESTS
+        depends on KUNIT
+        default KUNIT_ALL_TESTS
+        help
+          This builds unit tests for foo.
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://www.kernel.org/doc/html/latest/dev-tools/kunit/style.html#test-kconfig-entries">the upstream documentation</a>
+for the authoritative source on how to write Kconfig entries.</p>
+</section>
+<section id="v5-9">
+<span id="id5"></span><h2>5.9<a class="headerlink" href="#v5-9" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Named resources: tests can store and retrieve data via string keys.</p>
+<ul>
+<li><p>This is a power feature intended to be a cleaner alternative to using
+global variables in tests.</p></li>
+<li><p>See <a class="reference external" href="https://elixir.bootlin.com/linux/latest/source/lib/test_kasan.c">test_kasan.c</a> for an
+example that uses <code class="docutils literal notranslate"><span class="pre">&quot;kasan_data&quot;</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="v5-10">
+<span id="id6"></span><h2>5.10<a class="headerlink" href="#v5-10" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>KASAN violations cause the current KUnit test case to be marked FAILED.</p>
+<ul>
+<li><p>Note: KASAN doesn’t currently work on UML.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="v5-11">
+<span id="id7"></span><h2>5.11<a class="headerlink" href="#v5-11" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Parameterized testing: see the <a class="reference external" href="https://www.kernel.org/doc/html/latest/dev-tools/kunit/usage.html#parameterized-testing">docs</a>.</p></li>
+</ul>
+</section>
+<section id="v5-12">
+<span id="id8"></span><h2>5.12<a class="headerlink" href="#v5-12" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>You can pass in a path to a kunitconfig file instead of using
+<code class="docutils literal notranslate"><span class="pre">.kunit/.kunitconfig</span></code>, e.g.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./tools/testing/kunit/kunit.py run --kunitconfig<span class="o">=</span>fs/ext4/.kunitconfig
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You can tell <code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> to run a subset of built suites by passing in a
+glob argument, e.g.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Only run &quot;list&quot; suites</span>
+$ ./tools/testing/kunit/kunit.py run <span class="s1">&#39;*list*&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="v5-13">
+<span id="id9"></span><h2>5.13<a class="headerlink" href="#v5-13" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Can call <code class="docutils literal notranslate"><span class="pre">kunit_fail_current_test()</span></code> from anywhere to fail the current KUnit test (e.g. if an invariant is broken, a UBSAN violation is detected, etc.)</p></li>
+<li><p>You can pass a directory <code class="docutils literal notranslate"><span class="pre">--kunitconfig</span></code> and it’ll implicitly append
+<code class="docutils literal notranslate"><span class="pre">.kunitconfig</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">kunit.py</span> <span class="pre">run</span> <span class="pre">--kunitconfig=lib/kunit</span></code>.</p></li>
+</ul>
+</section>
+<section id="v5-14">
+<span id="id10"></span><h2>5.14<a class="headerlink" href="#v5-14" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> can run tests on non-UML architectures (using QEMU), <a class="reference external" href="https://www.kernel.org/doc/html/latest/dev-tools/kunit/kunit-tool.html#running-tests-on-qemu">docs</a></p></li>
+<li><p>It’s now possible to generate code coverage reports when using UML, <a class="reference external" href="https://www.kernel.org/doc/html/latest/dev-tools/kunit/running_tips.html#generating-code-coverage-reports-under-uml">docs</a></p></li>
+<li><p>Tests can call <code class="docutils literal notranslate"><span class="pre">kunit_skip()</span></code> to bail out and mark a test as “SKIPPED”
+instead of “PASSED” or “FAILED”</p></li>
+</ul>
+</section>
+<section id="v5-15">
+<span id="id11"></span><h2>5.15<a class="headerlink" href="#v5-15" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>UBSAN violations cause the current KUnit test case to be marked FAILED.</p></li>
+<li><p>Can pass kernel commandline parameters from <code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> via
+<code class="docutils literal notranslate"><span class="pre">--kernel_args</span></code></p></li>
+<li><p>KUnit prints a summary per suite of how many test cases passed/failed to
+dmesg, e.g.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># property-entry: pass:7 fail:0 skip:0 total:7</span>
+</pre></div>
+</div>
+</section>
+<section id="v5-16">
+<span id="id12"></span><h2>5.16<a class="headerlink" href="#v5-16" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>You can filter on test names now in addition to suite names, e.g.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Only run tests that contain &quot;foo&quot;</span>
+$ ./tools/testing/kunit/kunit.py run <span class="s1">&#39;*.*foo*&#39;</span>
+<span class="c1"># Only run tests in &quot;mysuite&quot; that contain &quot;foo&quot;</span>
+$ ./tools/testing/kunit/kunit.py run <span class="s1">&#39;mysuite.*foo*&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You can ask <code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> to run each suite/test by itself. This can be useful
+to track down issues due to non-hermetic tests</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./tools/testing/kunit/kunit.py run --run_isolated<span class="o">=</span>suite
+$ ./tools/testing/kunit/kunit.py run --run_isolated<span class="o">=</span><span class="nb">test</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kunit.py</span></code>’s parsing logic was largely rewritten, so the output looks
+slightly different</p>
+<ul>
+<li><p>Parsed output is also now mostly printed out in real time.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> with <code class="docutils literal notranslate"><span class="pre">--raw_output</span></code> will print output in real time.</p></li>
+<li><p>In-kernel documentation has been significantly revamped.</p></li>
+</ul>
+</section>
+<section id="v5-17">
+<span id="id13"></span><h2>5.17<a class="headerlink" href="#v5-17" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Print out parsed test results in real time.</p></li>
+<li><p>Allow tweaking Kconfig options from command-line, e.g.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./tools/testing/kunit/kunit.py run --kconfig_add<span class="o">=</span><span class="nv">MY_CONFIG</span><span class="o">=</span>y
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Reconfigure kunit kernel when the used <code class="docutils literal notranslate"><span class="pre">kunitconfig</span></code> has changed</p>
+<ul>
+<li><p>Before, if you removed an entry from <code class="docutils literal notranslate"><span class="pre">.kunitconfig</span></code>, <code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> would
+not reconfigure, so your edit would have no effect.</p></li>
+<li><p>This now also works if you remove a <code class="docutils literal notranslate"><span class="pre">--kconfig_add</span></code> flag.</p></li>
+</ul>
+</li>
+<li><p>Print out parameters as sub-test cases (both in raw and parsed output), e.g.:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">===============</span> <span class="n">ext4_inode_test</span> <span class="p">(</span><span class="mi">1</span> <span class="n">subtest</span><span class="p">)</span> <span class="o">================</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">=======</span> <span class="n">inode_test_xtimestamp_decoding</span> <span class="p">(</span><span class="mi">16</span> <span class="n">subtests</span><span class="p">)</span> <span class="o">=======</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="p">[</span><span class="n">PASSED</span><span class="p">]</span> <span class="mi">1901</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">13</span> <span class="n">Lower</span> <span class="n">bound</span> <span class="n">of</span> <span class="mi">32</span><span class="n">bit</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">no</span> <span class="n">extra</span> <span class="n">bits</span>
+<span class="o">...</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="p">[</span><span class="n">PASSED</span><span class="p">]</span> <span class="mi">2446</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">10</span> <span class="n">Upper</span> <span class="n">bound</span> <span class="n">of</span> <span class="mi">32</span><span class="n">bit</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="n">timestamp</span><span class="o">.</span> <span class="n">All</span> <span class="n">extra</span> <span class="n">sec</span> <span class="n">bits</span> <span class="n">on</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">=========</span> <span class="p">[</span><span class="n">PASSED</span><span class="p">]</span> <span class="n">inode_test_xtimestamp_decoding</span> <span class="o">==========</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">=================</span> <span class="p">[</span><span class="n">PASSED</span><span class="p">]</span> <span class="n">ext4_inode_test</span> <span class="o">=================</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">============================================================</span>
+</pre></div>
+</div>
+</section>
+<section id="v5-18">
+<span id="id14"></span><h2>5.18<a class="headerlink" href="#v5-18" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Drastically decrease stack usage of <code class="docutils literal notranslate"><span class="pre">KUNIT_EXPECT_</span></code> macros.</p>
+<ul>
+<li><p>Before, we largely relied on the compiler to optimize away some internal
+structs, but that didn’t always work.</p></li>
+<li><p>Now on UML (x86_64), <code class="docutils literal notranslate"><span class="pre">KUNIT_EXPECT_EQ()</span></code> uses 32 bytes instead of 88.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="v5-19">
+<span id="id15"></span><h2>5.19<a class="headerlink" href="#v5-19" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Add support for suite-level init/exit functions.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">suite_init</span></code>/<code class="docutils literal notranslate"><span class="pre">suite_exit</span></code> are like <code class="docutils literal notranslate"><span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">exit</span></code> instead of once per test case.</p></li>
+</ul>
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">KUNIT_EXPECT_NULL()</span></code>/<code class="docutils literal notranslate"><span class="pre">KUNIT_EXPECT_NOT_NULL()</span></code> macros.</p></li>
+<li><p>Split out KUnit resource API from <code class="docutils literal notranslate"><span class="pre">&lt;kunit/test.h&gt;</span></code> into <code class="docutils literal notranslate"><span class="pre">&lt;kunit/resource.h&gt;</span></code>.</p>
+<ul>
+<li><p>Including <code class="docutils literal notranslate"><span class="pre">&lt;kunit/test.h&gt;</span></code> will still automatically <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;kunit/resource.h&gt;</span></code> for now.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kunit.py</span></code> no longer colorizes output when stdout is not a tty.</p></li>
+<li><p>Add a manually curated <code class="docutils literal notranslate"><span class="pre">tools/testing/kunit/configs/all_tests_uml.config</span></code></p>
+<ul>
+<li><p>This attempts to enable as many tests as possible on UML.</p></li>
+</ul>
+</li>
+<li><p>Change quoting requirements for qemu_config files (<a class="reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3f0a50f345f78183f6e9b39c2f45ca5dcaa511ca">commit</a>)</p>
+<ul>
+<li><p>E.g. instead of <code class="docutils literal notranslate"><span class="pre">['-m</span> <span class="pre">256']</span></code>, do <code class="docutils literal notranslate"><span class="pre">['-m',</span> <span class="pre">'256']</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="tentative">
+<span id="v6-0"></span><h2>6.0 (tentative)<a class="headerlink" href="#tentative" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Overhaul support for building tests as modules</p>
+<ul>
+<li><p>Before, it wouldn’t work in modules that already had their own
+<code class="docutils literal notranslate"><span class="pre">module_init</span></code>/<code class="docutils literal notranslate"><span class="pre">module_exit</span></code>. Now this restriction is gone.</p></li>
+</ul>
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">--qemu_args</span></code> flag, e.g. use <code class="docutils literal notranslate"><span class="pre">--qemu_args='-m</span> <span class="pre">2048'</span></code> to give tests more RAM.</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">--kunitconfig</span></code> to be repeated.</p>
+<ul>
+<li><p>This will just concatenante the contents together.</p></li>
+<li><p>One use case for this is appending the options for code coverage:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./tools/testing/kunit/kunit.py run --kunitconfig<span class="o">=</span>my/dir --kunitconfig<span class="o">=</span>tools/testing/kunit/configs/coverage_uml.config
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Taint the kernel if any KUnit tests run.</p>
+<ul>
+<li><p>Add a new <code class="docutils literal notranslate"><span class="pre">TAINT_TEST</span></code> flag, shows up as <code class="docutils literal notranslate"><span class="pre">'N'</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Add support for KASAN to run on 64-bit UML.</p></li>
+<li><p>By default, enable PCI support under UML.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="third_party/stable_kernel/index.html" class="btn btn-neutral float-left" title="Deprecated Version (“kunit/alpha/master”)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mocking.html" class="btn btn-neutral float-right" title="Fakes and Stubbing and Mocks, Oh My!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 Google LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

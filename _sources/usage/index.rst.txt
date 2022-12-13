@@ -1,0 +1,97 @@
+===========
+Using KUnit
+===========
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   getting_kunit
+   faq
+
+Where is KUnit?
+:doc:`getting_kunit`
+
+
+KUnit is integrated into the Linux kernel, so all you need is a version of the
+kernel which contains KUnit, and a config file with which to build it. The
+:doc:`getting_kunit` page covers the different versions of KUnit available, and
+where to get them.
+
+
+Running tests
+=============
+
+To run KUnit tests, you'll need to provide a 'kunitconfig' file, which contains
+the list of test modules to build, and their dependencies.
+
+Once you have the ``kunitconfig`` file, just run:
+
+.. code-block:: bash
+
+   ./tools/testing/kunit/kunit.py run
+
+.. tip::
+
+   You may want to run KUnit with flags like:
+
+   .. code-block:: bash
+
+      ./tools/testing/kunit/kunit.py run --timeout=30 --jobs=24 --defconfig
+
+   - ``--timeout`` sets a maximum amount of time to allow tests to run.
+   - ``--jobs`` sets the number of threads to use to build the kernel.
+   - ``--defconfig`` uses an default kunitconfig in the kernel source.
+
+   For more information on these and other flags, try running:
+
+   .. code-block:: bash
+
+      ./tools/testing/kunit/kunit.py run --help
+
+This will build a UML (User Mode Linux) kernel, run the specified tests, and
+print the results (nicely formatted) to the screen.
+
+.. tip::
+
+   If you get the error message: ``/bin/sh: flex: command not found`` or
+   similarly ``/bin/sh: bison: command not found``, you are most likely missing
+   the flex and bison packages. On a system using the apt package manager you
+   can install them with
+
+   .. code-block:: bash
+
+      sudo apt-get install flex bison
+
+   For more information on building the kernel, see
+   https://www.kernel.org/doc/html/latest/process/changes.html
+
+Writing tests
+=============
+
+Once you have KUnit working, writing tests is easy. Each test is a function
+which accepts a ``struct kunit`` argument, and which calls the various
+``KUNIT_EXPECT_*`` macros to verify the state under test.
+
+More details can be found in the `Getting Started <../third_party/kernel/docs/start.html>`_
+guide.
+
+
+Submitting tests upstream
+=========================
+
+Ideally, KUnit tests will be submitted upstream alongside the code being tested,
+so any user or developer can run the tests and test any changes they make.
+Unless they affect KUnit itself, this means that KUnit tests should ideally be
+treated as any other change, and submitted via the maintainer of the subsystem
+being tested. (Though do feel free to copy in the
+``kunit-dev@googlegroups.com`` list if you want.)
+
+For changes to KUnit itself, we recommend submitting patches via the
+``linux-kselftest/kunit`` branch, which contains the version of KUnit likely to
+head upstream. To do so, please send your patch via the
+``linux-kselftest@vger.kernel.org`` list. You should still get a review from
+any relevant the subsystem maintainers, though.
+
+And, of course, you should follow the general rules and guidelines laid out in
+https://www.kernel.org/doc/html/latest/process/submitting-patches.html

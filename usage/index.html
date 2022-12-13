@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using KUnit &mdash; KUnit  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting KUnit" href="getting_kunit.html" />
+    <link rel="prev" title="KUnit" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> KUnit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using KUnit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_kunit.html">Getting KUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-tests">Running tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-tests">Writing tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-tests-upstream">Submitting tests upstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third_party/kernel/index.html">Upstream Version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../third_party/stable_kernel/index.html">Deprecated Version (“kunit/alpha/master”)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mocking.html">Fakes and Stubbing and Mocks, Oh My!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../press.html">Press</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KUnit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using KUnit</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/usage/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-kunit">
+<h1>Using KUnit<a class="headerlink" href="#using-kunit" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_kunit.html">Getting KUnit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_kunit.html#where-are-these-versions">Where are these versions?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#im-seeing-error-root-kconfig-is-not-contained-in-validated-config">I’m seeing ‘Error:root:Kconfig is not contained in validated .config!’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#im-seeing-a-lot-of-makes-integer-from-pointer-without-a-cast-errors-in-kunit-assertion">I’m seeing a lot of ‘makes integer from pointer without a cast’ errors in KUNIT_ASSERTION</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Where is KUnit?
+<a class="reference internal" href="getting_kunit.html"><span class="doc">Getting KUnit</span></a></p>
+<p>KUnit is integrated into the Linux kernel, so all you need is a version of the
+kernel which contains KUnit, and a config file with which to build it. The
+<a class="reference internal" href="getting_kunit.html"><span class="doc">Getting KUnit</span></a> page covers the different versions of KUnit available, and
+where to get them.</p>
+<section id="running-tests">
+<h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline"></a></h2>
+<p>To run KUnit tests, you’ll need to provide a ‘kunitconfig’ file, which contains
+the list of test modules to build, and their dependencies.</p>
+<p>Once you have the <code class="docutils literal notranslate"><span class="pre">kunitconfig</span></code> file, just run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./tools/testing/kunit/kunit.py run
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may want to run KUnit with flags like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./tools/testing/kunit/kunit.py run --timeout<span class="o">=</span><span class="m">30</span> --jobs<span class="o">=</span><span class="m">24</span> --defconfig
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--timeout</span></code> sets a maximum amount of time to allow tests to run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> sets the number of threads to use to build the kernel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--defconfig</span></code> uses an default kunitconfig in the kernel source.</p></li>
+</ul>
+<p>For more information on these and other flags, try running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./tools/testing/kunit/kunit.py run --help
+</pre></div>
+</div>
+</div>
+<p>This will build a UML (User Mode Linux) kernel, run the specified tests, and
+print the results (nicely formatted) to the screen.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you get the error message: <code class="docutils literal notranslate"><span class="pre">/bin/sh:</span> <span class="pre">flex:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> or
+similarly <code class="docutils literal notranslate"><span class="pre">/bin/sh:</span> <span class="pre">bison:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code>, you are most likely missing
+the flex and bison packages. On a system using the apt package manager you
+can install them with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install flex bison
+</pre></div>
+</div>
+<p>For more information on building the kernel, see
+<a class="reference external" href="https://www.kernel.org/doc/html/latest/process/changes.html">https://www.kernel.org/doc/html/latest/process/changes.html</a></p>
+</div>
+</section>
+<section id="writing-tests">
+<h2>Writing tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline"></a></h2>
+<p>Once you have KUnit working, writing tests is easy. Each test is a function
+which accepts a <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">kunit</span></code> argument, and which calls the various
+<code class="docutils literal notranslate"><span class="pre">KUNIT_EXPECT_*</span></code> macros to verify the state under test.</p>
+<p>More details can be found in the <a class="reference external" href="../third_party/kernel/docs/start.html">Getting Started</a>
+guide.</p>
+</section>
+<section id="submitting-tests-upstream">
+<h2>Submitting tests upstream<a class="headerlink" href="#submitting-tests-upstream" title="Permalink to this headline"></a></h2>
+<p>Ideally, KUnit tests will be submitted upstream alongside the code being tested,
+so any user or developer can run the tests and test any changes they make.
+Unless they affect KUnit itself, this means that KUnit tests should ideally be
+treated as any other change, and submitted via the maintainer of the subsystem
+being tested. (Though do feel free to copy in the
+<code class="docutils literal notranslate"><span class="pre">kunit-dev&#64;googlegroups.com</span></code> list if you want.)</p>
+<p>For changes to KUnit itself, we recommend submitting patches via the
+<code class="docutils literal notranslate"><span class="pre">linux-kselftest/kunit</span></code> branch, which contains the version of KUnit likely to
+head upstream. To do so, please send your patch via the
+<code class="docutils literal notranslate"><span class="pre">linux-kselftest&#64;vger.kernel.org</span></code> list. You should still get a review from
+any relevant the subsystem maintainers, though.</p>
+<p>And, of course, you should follow the general rules and guidelines laid out in
+<a class="reference external" href="https://www.kernel.org/doc/html/latest/process/submitting-patches.html">https://www.kernel.org/doc/html/latest/process/submitting-patches.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="KUnit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getting_kunit.html" class="btn btn-neutral float-right" title="Getting KUnit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 Google LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
